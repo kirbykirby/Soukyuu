@@ -40,15 +40,15 @@ public class ConfigManager {
 		{
 			ConfigManager.configuration.load();
 			
-		  	ConfigManager.idStone   = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idStone",3350).getInt(3350);
-	        ConfigManager.idGrass   = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idGrass", 3351).getInt(3351);
-	        ConfigManager.idDirt    = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idDirt",3352).getInt(3352);
-	        ConfigManager.idFlower  = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idFlower",3353).getInt(3353);
-	        ConfigManager.idStar    = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idStar",3354).getInt(3354);
-	        ConfigManager.idWood    = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idWood",3355).getInt(3355);
-	        ConfigManager.idTNT     = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idTNT",3356).getInt(3356);
-	        ConfigManager.idPortal  = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idPortal",3357).getInt(3357);
-	        ConfigManager.idTrigger = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idTrigger",3358).getInt(3358);
+		  	ConfigManager.idStone   = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idStone",3350).getInt();
+	        ConfigManager.idGrass   = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idGrass", 3351).getInt();
+	        ConfigManager.idDirt    = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idDirt",3352).getInt();
+	        ConfigManager.idFlower  = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idFlower",3353).getInt();
+	        ConfigManager.idPresent    = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idPresent",3354).getInt();
+	        ConfigManager.idWood    = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idWood",3355).getInt();
+	        ConfigManager.idTNT     = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idTNT",3356).getInt();
+	        ConfigManager.idPortal  = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idPortal",3357).getInt();
+	        ConfigManager.idTrigger = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idTrigger",3358).getInt();
 		}
 		catch (final Exception e)
 		{

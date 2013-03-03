@@ -40,7 +40,7 @@ public class ChunkProviderSoukyuu
     public NoiseGeneratorOctaves noiseGenerator7;
     public NoiseGeneratorOctaves noiseGenerator8;
     private World worldObj;
-    private double field_28080_q[];
+    private double densities[];
     private double field_28079_r[];
     private double field_28078_s[];
     private double field_28077_t[];
@@ -81,7 +81,7 @@ public class ChunkProviderSoukyuu
         int k = byte0 + 1;
         byte byte1 = 33;
         int l = byte0 + 1;
-        field_28080_q = func_28073_a(field_28080_q, i * byte0, 0, j * byte0, k, byte1, l);
+        densities = initializeNoiseField(densities, i * byte0, 0, j * byte0, k, byte1, l);
         for(int i1 = 0; i1 < byte0; i1++)
         {
             for(int j1 = 0; j1 < byte0; j1++)
@@ -89,14 +89,14 @@ public class ChunkProviderSoukyuu
                 for(int k1 = 0; k1 < 32; k1++)
                 {
                     double d = 0.25D;
-                    double d1 = field_28080_q[((i1 + 0) * l + (j1 + 0)) * byte1 + (k1 + 0)];
-                    double d2 = field_28080_q[((i1 + 0) * l + (j1 + 1)) * byte1 + (k1 + 0)];
-                    double d3 = field_28080_q[((i1 + 1) * l + (j1 + 0)) * byte1 + (k1 + 0)];
-                    double d4 = field_28080_q[((i1 + 1) * l + (j1 + 1)) * byte1 + (k1 + 0)];
-                    double d5 = (field_28080_q[((i1 + 0) * l + (j1 + 0)) * byte1 + (k1 + 1)] - d1) * d;
-                    double d6 = (field_28080_q[((i1 + 0) * l + (j1 + 1)) * byte1 + (k1 + 1)] - d2) * d;
-                    double d7 = (field_28080_q[((i1 + 1) * l + (j1 + 0)) * byte1 + (k1 + 1)] - d3) * d;
-                    double d8 = (field_28080_q[((i1 + 1) * l + (j1 + 1)) * byte1 + (k1 + 1)] - d4) * d;
+                    double d1 = densities[((i1 + 0) * l + (j1 + 0)) * byte1 + (k1 + 0)];
+                    double d2 = densities[((i1 + 0) * l + (j1 + 1)) * byte1 + (k1 + 0)];
+                    double d3 = densities[((i1 + 1) * l + (j1 + 0)) * byte1 + (k1 + 0)];
+                    double d4 = densities[((i1 + 1) * l + (j1 + 1)) * byte1 + (k1 + 0)];
+                    double d5 = (densities[((i1 + 0) * l + (j1 + 0)) * byte1 + (k1 + 1)] - d1) * d;
+                    double d6 = (densities[((i1 + 0) * l + (j1 + 1)) * byte1 + (k1 + 1)] - d2) * d;
+                    double d7 = (densities[((i1 + 1) * l + (j1 + 0)) * byte1 + (k1 + 1)] - d3) * d;
+                    double d8 = (densities[((i1 + 1) * l + (j1 + 1)) * byte1 + (k1 + 1)] - d4) * d;
                     for(int l1 = 0; l1 < 4; l1++)
                     {
                         double d9 = 0.125D;
@@ -230,7 +230,7 @@ public class ChunkProviderSoukyuu
         return chunk;
     }
 
-    private double[] func_28073_a(double ad[], int i, int j, int k, int l, int i1, int j1)
+    private double[] initializeNoiseField(double ad[], int i, int j, int k, int l, int i1, int j1)
     {
         if(ad == null)
         {
@@ -405,64 +405,56 @@ public class ChunkProviderSoukyuu
     {
         return false;
     }
-
+    @Override
     public String makeString()
     {
         return "RandomLevelSource";
     }
-
+    @Override
     public boolean canSave()
     {
         return true;
     }
-
-    public ChunkPosition func_40376_a(World world, String s, int i, int j, int k)
-    {
-        return null;
-    }
-
+  
+    
+    @Override
     public Chunk loadChunk(int i, int j)
     {
         return provideChunk(i, j);
     }
 
-    public List func_40377_a(EnumCreatureType enumcreaturetype, int i, int j, int k)
-    {
-    	
+   
+
+	@Override
+	public List getPossibleCreatures(EnumCreatureType var1, int var2, int var3,
+			int var4) {
+
         WorldChunkManager worldchunkmanager = worldObj.getWorldChunkManager();
-        BiomeGenBase biomegenbase = worldchunkmanager.getBiomeGenAt(i >> 4, k >> 4);
+        BiomeGenBase biomegenbase = worldchunkmanager.getBiomeGenAt(var2 >> 4, var4 >> 4);
         if(biomegenbase == null)
         {
             return null;
         } else
         {
-            return biomegenbase.getSpawnableList(enumcreaturetype);
+            return biomegenbase.getSpawnableList(var1);
         }
+	}
+
+
+	public ChunkPosition findClosestStructure(World par1World, String par2Str, int par3, int par4, int par5)
+    {
+        return null;
     }
 
 	@Override
-	public List getPossibleCreatures(EnumCreatureType var1, int var2, int var3,
-			int var4) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ChunkPosition findClosestStructure(World var1, String var2,
-			int var3, int var4, int var5) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public int getLoadedChunkCount() {
-		// TODO Auto-generated method stub
+		
 		return 0;
 	}
-//-888108490342622291 x-604 z353
+
 	@Override
 	public void recreateStructures(int var1, int var2) {
-		// TODO Auto-generated method stub
+		
 
 	}
 }
