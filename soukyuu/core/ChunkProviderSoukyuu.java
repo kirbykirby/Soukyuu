@@ -213,11 +213,7 @@ public class ChunkProviderSoukyuu
 
     }
 
-    public Chunk prepareChunk(int i, int j)
-    {
-        return provideChunk(i, j);
-    }
-
+   
     public Chunk provideChunk(int i, int j)
     {
         random.setSeed((long)i * 0x4f9939f508L + (long)j * 0x1ef1565bd5L);
@@ -333,7 +329,7 @@ public class ChunkProviderSoukyuu
 
     public void populate(IChunkProvider ichunkprovider, int i, int j)
     {
-        BiomeGenSkyland biomegensky = BiomeGenSkyland.me;
+        BiomeGenSkyland biomegensky = new BiomeGenSkyland();
         BlockSand.fallInstantly = true;
         int k = i * 16;
         int l = j * 16;
@@ -438,6 +434,7 @@ public class ChunkProviderSoukyuu
         {
             return biomegenbase.getSpawnableList(var1);
         }
+//		return null;
 	}
 
 

@@ -40,15 +40,25 @@ public class ConfigManager {
 		{
 			ConfigManager.configuration.load();
 			
-		  	ConfigManager.idStone   = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idStone",3350).getInt();
-	        ConfigManager.idGrass   = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idGrass", 3351).getInt();
-	        ConfigManager.idDirt    = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idDirt",3352).getInt();
-	        ConfigManager.idFlower  = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idFlower",3353).getInt();
-	        ConfigManager.idPresent    = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idPresent",3354).getInt();
-	        ConfigManager.idWood    = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idWood",3355).getInt();
-	        ConfigManager.idTNT     = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idTNT",3356).getInt();
-	        ConfigManager.idPortal  = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idPortal",3357).getInt();
-	        ConfigManager.idTrigger = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idTrigger",3358).getInt();
+//		  	ConfigManager.idStone   = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idStone",3350).getInt();
+//	        ConfigManager.idGrass   = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idGrass", 3351).getInt();
+//	        ConfigManager.idDirt    = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idDirt",3352).getInt();
+//	        ConfigManager.idFlower  = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idFlower",3353).getInt();
+//	        ConfigManager.idPresent    = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idPresent",3354).getInt();
+//	        ConfigManager.idWood    = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idWood",3355).getInt();
+//	        ConfigManager.idTNT     = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idTNT",3356).getInt();
+//	        ConfigManager.idPortal  = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idPortal",3357).getInt();
+//	        ConfigManager.idTrigger = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idTrigger",3358).getInt();
+		
+			ConfigManager.idStone   = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idStone",222).getInt();
+	        ConfigManager.idGrass   = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idGrass", 223).getInt();
+	        ConfigManager.idDirt    = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idDirt",224).getInt();
+	        ConfigManager.idFlower  = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idFlower",225).getInt();
+	        ConfigManager.idPresent    = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idPresent",226).getInt();
+	        ConfigManager.idWood    = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idWood",227).getInt();
+	        ConfigManager.idTNT     = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idTNT",228).getInt();
+	        ConfigManager.idPortal  = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idPortal",229).getInt();
+	        ConfigManager.idTrigger = ConfigManager.configuration.get(Configuration.CATEGORY_BLOCK, "idTrigger",230).getInt();
 		}
 		catch (final Exception e)
 		{

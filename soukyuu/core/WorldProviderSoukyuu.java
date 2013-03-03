@@ -27,11 +27,11 @@ public class WorldProviderSoukyuu extends WorldProvider {
 	}
 	@Override
 	public float calculateCelestialAngle(long l, float f) {
-		return super.calculateCelestialAngle(l, f);
+		return 0;
 	}
 	@Override
 	public float[] calcSunriseSunsetColors(float f, float f1) {
-		return super.calcSunriseSunsetColors(f, f1);
+		return null;
 	}
 @Override
 @SideOnly(Side.CLIENT)
