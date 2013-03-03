@@ -5,9 +5,9 @@ import net.minecraft.world.biome.BiomeGenBase;
 public class BiomeGenSkyland extends BiomeGenBase
 {
 	public static BiomeGenSkyland me = null;
-    public BiomeGenSkyland(int par1)
+    public BiomeGenSkyland()
     {
-        super(par1);
+        super(30);
         this.spawnableMonsterList.clear();
         this.spawnableCreatureList.clear();
         this.spawnableWaterCreatureList.clear();   
