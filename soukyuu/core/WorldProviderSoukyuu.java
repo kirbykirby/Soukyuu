@@ -15,48 +15,39 @@ public class WorldProviderSoukyuu extends WorldProvider {
 	
 	
 
-	public WorldProviderSoukyuu() {
-		super();
-		dimensionId = Soukyuu.Dimid;
-	}
-
+	
+	@Override
 	public void registerWorldChunkManager() {
-		
-
+		super.registerWorldChunkManager();
+		this.dimensionId =Soukyuu.Dimid;
 	}
-
+	@Override
 	public IChunkProvider createChunkGenerator() {
 		return new ChunkProviderSoukyuu(worldObj, worldObj.getSeed());
 	}
-
+	@Override
 	public float calculateCelestialAngle(long l, float f) {
-		return 0.0F;
+		return super.calculateCelestialAngle(l, f);
 	}
-
+	@Override
 	public float[] calcSunriseSunsetColors(float f, float f1) {
-		return null;
+		return super.calcSunriseSunsetColors(f, f1);
 	}
-
-
-	 @SideOnly(Side.CLIENT)
-
-	    /**
-	     * Return Vec3D with biome specific fog color
-	     */
-	    public Vec3 getFogColor(float par1, float par2)
-	    {
-		
-		 return this.worldObj.getWorldVec3Pool().getVecFromPool(1.1D, 1.1D, 1.1D);
-	    }
-
+@Override
+@SideOnly(Side.CLIENT)
+public Vec3 getFogColor(float par1, float par2)
+{
+	return this.worldObj.getWorldVec3Pool().getVecFromPool(1.1D, 1.1D, 1.1D);
+	}
+@Override
 	public boolean isSkyColored() {
 		return false;
 	}
-
+@Override
 	public float getCloudHeight() {
 		return 8F;
 	}
-
+@Override
 	public boolean canCoordinateBeSpawn(int i, int j) {
 		int k = worldObj.getFirstUncoveredBlock(i, j);
 
